@@ -36,6 +36,7 @@ namespace MiningCore.Blockchain.Bitcoin
         private static readonly IHashAlgorithm sha256DReverse = new DigestReverser(sha256D);
         private static readonly IHashAlgorithm x11 = new X11();
         private static readonly IHashAlgorithm x17 = new X17();
+        private static readonly IHashAlgorithm x13 = new X13();
         private static readonly IHashAlgorithm groestl = new Groestl();
         private static readonly IHashAlgorithm lyra2Rev2 = new Lyra2Rev2();
         private static readonly IHashAlgorithm scrypt_1024_1 = new Scrypt(1024, 1);
@@ -61,6 +62,9 @@ namespace MiningCore.Blockchain.Bitcoin
 
         private static readonly BitcoinCoinProperties x11Coin =
             new BitcoinCoinProperties(1, sha256D, x11, new DigestReverser(x11), "X11");
+
+        private static readonly BitcoinCoinProperties x13Coin =
+            new BitcoinCoinProperties(1, sha256D, x13, new DigestReverser(x13));
 
         private static readonly BitcoinCoinProperties skeinCoin =
             new BitcoinCoinProperties(1, sha256D, skein, sha256DReverse, "Skein");
